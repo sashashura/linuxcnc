@@ -583,6 +583,7 @@ KILL_TIMEOUT=20
 # if it doesn't work, kill -9 is used
 ################################################################################
 function KillTaskWithTimeout() {
+    set -x
     if [ ! -n "$KILL_PIDS" ] ; then
 	KILL_PIDS=`$PIDOF $KILL_TASK`
     fi

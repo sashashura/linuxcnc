@@ -385,7 +385,7 @@ static void write_strings(int fd, vector<string> strings) {
 static int handle_command(vector<string> args) {
     if(args.size() == 0) { return 0; }
     if(args.size() == 1 && args[0] == "exit") {
-        rtapi_print_msg(RTAPI_MSG_ERR, "got exit command\n");
+        rtapi_print_msg(RTAPI_MSG_ERR, "got exit command (instance_count=%d)\n", instance_count);
         force_exit = 1;
         return 0;
     } else if(args.size() >= 2 && args[0] == "load") {

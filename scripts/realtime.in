@@ -199,6 +199,11 @@ Unload(){
         START=$SECONDS
         local NPROCS
         while [ 5 -gt $((SECONDS-START)) ]; do
+            echo "ps:"
+            ps -C rtapi_app -o comm=
+            echo "ps | grep -v:"
+            ps -C rtapi_app -o comm= | $GREP -v '<defunct>'
+            echo "thats it"
             NPROCS=$(ps -C rtapi_app -o comm= | $GREP -v '<defunct>' | wc -l)
             if [ $NPROCS -eq 0 ]; then
                 break

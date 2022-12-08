@@ -193,6 +193,7 @@ Unload(){
     case $RTPREFIX in
     uspace)
         rtapi_app exit 
+        echo "'rtapi_app exit' returned $?"
 
         # wait 5 seconds for rtapi_app to die and be reaped by its parent
         START=$SECONDS

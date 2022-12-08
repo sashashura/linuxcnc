@@ -385,6 +385,7 @@ static void write_strings(int fd, vector<string> strings) {
 static int handle_command(vector<string> args) {
     if(args.size() == 0) { return 0; }
     if(args.size() == 1 && args[0] == "exit") {
+        rtapi_print_msg(RTAPI_MSG_ERR, "got exit command\n");
         force_exit = 1;
         return 0;
     } else if(args.size() >= 2 && args[0] == "load") {
@@ -446,6 +447,7 @@ static int callback(int fd)
         };
         close(fd1);
     }
+    rtapi_print_msg(RTAPI_MSG_ERR, "callback returning, force_exit=%d instance_count=%d\n", force_exit, instance_count);
     return !force_exit && instance_count > 0;
 }
 

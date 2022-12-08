@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 ### BEGIN INIT INFO
 # Provides:          realtime
 # Required-Start:    $remote_fs $syslog

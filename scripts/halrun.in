@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 PATH=@EMC2_BIN_DIR@:$PATH
 REALTIME=@REALTIME@
